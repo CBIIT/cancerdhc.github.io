@@ -10,8 +10,6 @@ The example data workflow will ensure that the products of several CCDH workflow
 
 [Example data](http://www.github.com/cancerDHC/example-data) is available.
 
-<img src="./transformation-validation-tools.svg">
-
 ## NCIt-plus
 The NCIt OBO Edition is an [OBO Foundry](http://obofoundry.org/) library-friendly version of the NCI Thesaurus. The OBO Foundry is a community of ontology developers who are committed to developing ontologies under a shared set of principles, including reusing each other’s existing ontologies and ensuring interoperability between ontologies. The NCIt-plus is an extension of the NCIt OBO Edition providing a deeper integration with ontologies from the OBO library.
 
