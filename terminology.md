@@ -50,7 +50,7 @@ The LinkML foundation of the CCDH model harmonization project puts us into a pos
 
 In particular, the LinkML “Enumeration” model derives directly from the 11179 Enumerated Value Domain / Enumerated Value Meaning model, allowing one to list the possible values in a data field, document them and associate them with their intended meaning in an external ontology. See [LinkML Yosemite Presentation (Slides 38-43)](https://docs.google.com/presentation/d/1jtV2vQhCwsGv_9fPplkG8ww1ru4V_JYyRGLAm2dxvdE/edit#slide=id.gcf33f470c2_1_311)
 
-![linkml-11179-3](./LinkML-11179-3.png) 
+![linkml-11179-3](./terminology/LinkML-11179-3.png) 
 
 
 The LinkML model extends the 11179 approach by allowing the algorithmic definition of permissible values, allowing modelers to state that the permissible value for a field is the code associated with the value meaning, the URI, curie, or (future) the HL7 FHIR Coding construct.  The class_uri and slot_uri attributes allow modelers to check the list of intended meanings and to call out any meaning codes that may not be defined as being valid in the range of the associated slot_uri.  LinkML relies on a customized set of terminology services that will interpret code set definitions (ala. FHIR or CTS2) to identify the complete set of possible value meanings that might appear in a given slot.
