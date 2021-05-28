@@ -1,5 +1,23 @@
 # Terminology and Ontology Workstream
 
+Table of Contents
+
+  * [Decision to use LinkML](#decision-to-use-linkml)
+    + [UML](#uml)
+    + [HL7 FHIR](#hl7-fhir)
+    + [Use of LinkML](#use-of-linkml)
+  * [CCDH Terminology Services](#ccdh-terminology-services)
+    + [Terminology services API](#terminology-services-api)
+    + [Terminology Common Core Model (TCCM)](#terminology-common-core-model--tccm-)
+  * [Harmonization of concepts](#harmonization-of-concepts)
+  * [NCIt, NCIt+ and Ontology](#ncit--ncit--and-ontology)
+    + [GCD, PDC and other models in caDSR](#gcd--pdc-and-other-models-in-cadsr)
+      - [Question 1: What is a “Molecular Specimen” and what does or does not fit into that bucket?](#question-1--what-is-a--molecular-specimen--and-what-does-or-does-not-fit-into-that-bucket-)
+      - [Question 2:  I have separated the preservation method from the actual specimen content itself.  I have DNA, RNA and mitochondrial RNA specimens, all of which are in Paraffin-embedded blocks.  Some of these specimens have been preserved using formaldehyde, some with propylene glycol and we also have some where the method has not been recorded.  In addition, I have specimens that include a mixture of DNA and RNA.  How do I record this information?](#question-2---i-have-separated-the-preservation-method-from-the-actual-specimen-content-itself--i-have-dna--rna-and-mitochondrial-rna-specimens--all-of-which-are-in-paraffin-embedded-blocks--some-of-these-specimens-have-been-preserved-using-formaldehyde--some-with-propylene-glycol-and-we-also-have-some-where-the-method-has-not-been-recorded--in-addition--i-have-specimens-that-include-a-mixture-of-dna-and-rna--how-do-i-record-this-information-)
+      - [Question 3: I also have samples of amniotic fluid.  Do these count as “Molecular Specimens”?  Can these be recorded in this data record as well?](#question-3--i-also-have-samples-of-amniotic-fluid--do-these-count-as--molecular-specimens----can-these-be-recorded-in-this-data-record-as-well-)
+      - [Question 4: If I record a sample as “DNA” am I asserting that it is not FFPE DNA?  That I don’t know?  Should FFPE DNA be recorded with two  types - DNA and FFPE DNA?](#question-4--if-i-record-a-sample-as--dna--am-i-asserting-that-it-is-not-ffpe-dna---that-i-don-t-know---should-ffpe-dna-be-recorded-with-two--types---dna-and-ffpe-dna-)
+    + [Using the NCIt Plus with real data](#using-the-ncit-plus-with-real-data)
+
 
 ## Decision to use LinkML
 
