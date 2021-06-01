@@ -1,5 +1,19 @@
 # CCDH Resources
 
+Table of Contents
+
+  * [Harmonized CRDC Data Model (CRDC-H)](#harmonized-crdc-data-model-crdc-h)
+    * [The CCDH Harmonized Data Model (CRDC-H)](#the-ccdh-harmonized-data-model-crdc-h)
+    * [LinkML](#linkml)
+      * [Use of LinkML](#use-of-linkml)
+      * [Why not UML?](#why-not-uml)
+  * [CCDH Terminology Services](#ccdh-terminology-services)
+    * [Terminology services API](#terminology-services-api)
+    * [Terminology Common Core Model (TCCM)](#terminology-common-core-model-tccm)
+    * [Harmonization of concepts](#harmonization-of-concepts)
+    * [Creating NCI Thesaurus (NCIt) interoperability: NCIt-Plus](#creating-nci-thesaurus-ncit-interoperability-ncit-plus)
+  * [Example Data Transformation Workflow](#example-data-transformation-workflow)
+
 ## Harmonized CRDC Data Model (CRDC-H)
 Models are used to simplify complex ideas. A data model explicitly determines the structure of data, organizing data elements and standardizing how they relate to one another. An important distinction needs to be made between commonly used data dictionaries and a data model. A data dictionary usually consists of a list of fields and permissible values (for example, cancer stages), which are sometimes linked to terms from an ontology or controlled vocabulary. A data model, however, is a computable representation of all of the data elements and their relationships, and can contain components of the dictionary in the form of linked fields and tables (e.g., the SQL database). CCDH’s goal is to support the harmonization of equivalent data elements in disparate models across NCI’s Cancer Research Data Commons (CRDC) Repositories (nodes) to enable cross-node querying and multi-modal analytics. Individual nodes’ data models have been developed largely independently to fit specific data types and/or use cases. The CCDH is tasked with defining a shared data model for use across the CRDC, leveraging existing standards where possible to support interoperability with external data. 
 
