@@ -12,10 +12,6 @@ Table of Contents
   * [Harmonization of concepts](#harmonization-of-concepts)
   * [NCIt, NCIt+ and Ontology](#ncit--ncit--and-ontology)
     + [GCD, PDC and other models in caDSR](#gcd--pdc-and-other-models-in-cadsr)
-      - [Question 1: What is a “Molecular Specimen” and what does or does not fit into that bucket?](#question-1--what-is-a--molecular-specimen--and-what-does-or-does-not-fit-into-that-bucket-)
-      - [Question 2:  I have separated the preservation method from the actual specimen content itself.  I have DNA, RNA and mitochondrial RNA specimens, all of which are in Paraffin-embedded blocks.  Some of these specimens have been preserved using formaldehyde, some with propylene glycol and we also have some where the method has not been recorded.  In addition, I have specimens that include a mixture of DNA and RNA.  How do I record this information?](#question-2---i-have-separated-the-preservation-method-from-the-actual-specimen-content-itself--i-have-dna--rna-and-mitochondrial-rna-specimens--all-of-which-are-in-paraffin-embedded-blocks--some-of-these-specimens-have-been-preserved-using-formaldehyde--some-with-propylene-glycol-and-we-also-have-some-where-the-method-has-not-been-recorded--in-addition--i-have-specimens-that-include-a-mixture-of-dna-and-rna--how-do-i-record-this-information-)
-      - [Question 3: I also have samples of amniotic fluid.  Do these count as “Molecular Specimens”?  Can these be recorded in this data record as well?](#question-3--i-also-have-samples-of-amniotic-fluid--do-these-count-as--molecular-specimens----can-these-be-recorded-in-this-data-record-as-well-)
-      - [Question 4: If I record a sample as “DNA” am I asserting that it is not FFPE DNA?  That I don’t know?  Should FFPE DNA be recorded with two  types - DNA and FFPE DNA?](#question-4--if-i-record-a-sample-as--dna--am-i-asserting-that-it-is-not-ffpe-dna---that-i-don-t-know---should-ffpe-dna-be-recorded-with-two--types---dna-and-ffpe-dna-)
     + [Using the NCIt Plus with real data](#using-the-ncit-plus-with-real-data)
 
 
@@ -68,7 +64,7 @@ The LinkML foundation of the CCDH model harmonization project puts us into a pos
 
 In particular, the LinkML “Enumeration” model derives directly from the 11179 Enumerated Value Domain / Enumerated Value Meaning model, allowing one to list the possible values in a data field, document them and associate them with their intended meaning in an external ontology. See [LinkML Yosemite Presentation (Slides 38-43)](https://docs.google.com/presentation/d/1jtV2vQhCwsGv_9fPplkG8ww1ru4V_JYyRGLAm2dxvdE/edit#slide=id.gcf33f470c2_1_311)
 
-![linkml-11179-3](./terminology/LinkML-11179-3.png) 
+![linkml-11179-3](./images/LinkML-11179-3.png) 
 
 
 The LinkML model extends the 11179 approach by allowing the algorithmic definition of permissible values, allowing modelers to state that the permissible value for a field is the code associated with the value meaning, the URI, curie, or (future) the HL7 FHIR Coding construct.  The class_uri and slot_uri attributes allow modelers to check the list of intended meanings and to call out any meaning codes that may not be defined as being valid in the range of the associated slot_uri.  LinkML relies on a customized set of terminology services that will interpret code set definitions (ala. FHIR or CTS2) to identify the complete set of possible value meanings that might appear in a given slot.
@@ -83,7 +79,7 @@ Terminology services are computational mechanisms to access and query over seman
 The CCDH terminology service is a RESTful API - an architectural style for an application program interface (API) that uses HTTP requests to access and use data - which supports the validation, lookup, binding, and mapping of the concepts in the CCDH data harmonization process and the transformation and validation workflow. The API uses a conceptual graph model based on the ISO/IEC 11179-3, a metadata registries metamodel of the International Organization for Standardization (ISO)’s technical committee on data management and interchange. The CCDH terminology service API integrates sources of model definitions, permissible values, concepts, and mappings, which are shown in the figure below. These sources include concept codes from the NCI Thesaurus (NCIt), the data dictionaries of metadata models such as the Genomics (GDC) and Proteomics (PDC) Data Commons data dictionaries, the CCDH Harmonized model (CRDC-H), the mappings of attributes from the CRDC Data Repositories’ (data nodes) models to the CRDC-H model, and the mappings of values in their data dictionaries to NCIt concept codes from NCIt EVS and caDSR. 
 
 
-
+![value-mappings-graph-model](../images/value-mappings-graph-model.png)
 Figure: Conceptual models (ovals) of the data in the CCDH Terminology Service and their sources (the shaded boxes). 
 
 The endpoints in the RESTful service provide ways to navigate and retrieve this information. The API is built on top of the OpenAPI standard (OAS) and an OAS 3 spec (https://terminology.ccdh.io/openapi.json) is available for automated creation and exploration of the API capabilities with OAS-compatible toolings. The OAS API Documentation UI (https://terminology.ccdh.io/docs) could be used to explore and test the endpoints. All source code of the service and technical documentations are on GitHub (https://github.com/cancerDHC/ccdh-terminology-service). 
@@ -93,7 +89,7 @@ The endpoints in the RESTful service provide ways to navigate and retrieve this 
 
 The Terminology Common Core Model (TCCM) is a code set catalog -- a minimal set of information of terminology concepts in a common format and a collection of links to get more information. TCCM will also serve as the base of a code set service, where performance is at a premium. The TCCM core is based on a Simple Knowledge Organization System (SKOS) model and semantics (as is the Common Terminology Services 2 (CTS2) specification, from which the TCCM is derived). The TCCM Maps are based on the  Simple Standard for Sharing Ontology Mappings (SSSOM) model. TCCM provides a set of standard metadata elements to describe mappings and is capable of providing additional provenance of the mappings. The TCCM model is written in LinkML and a code repository for this model can be found at https://github.com/HOT-Ecosystem/tccm-model. 
 
-The TCCM API (GitHub repository) provides implementations of RESTful service endpoints to query and validate concepts and terms, to and retrieve and resolve definitions of code sets. The TCCM API is integrated into the CCDH terminology service API. 
+The TCCM API ([GitHub repository](https://github.com/HOT-Ecosystem/tccm-api)) provides implementations of RESTful service endpoints to query and validate concepts and terms, to and retrieve and resolve definitions of code sets. The TCCM API is integrated into the CCDH terminology service API. 
 
 
 ## Harmonization of concepts
@@ -123,6 +119,7 @@ The first two examples are instances of Described_Value_Domains, where the assoc
 Using the above diagram as a reference point, we can now take a peek at a data element defined in the Genomic Data Commons (GDC) -- the object “Analyte” and the property “analyte_type”.  (https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=analyte)
 By following the link from analyte_type to the caDSR, we find the following information:
 
+![cadsr](./images/cadsr_screenshot_1.png)
 
 We quickly discover, however, that we are using the NCIt strictly as a lexicon.  While the Object Class C19157 (Specimen) generally situates us in the NCIt, the second concept, C25574 (Molecular) turns out to have no formal relationship whatsoever with Specimen.  There is nothing in the ontology that states that certain kinds of specimens are “molecular”, let alone identify what characteristics differentiate “molecular specimens” from the “non-molecular” alternatives. 
 
