@@ -106,7 +106,7 @@ As [Hartel, et. al. have emphasized](https://www.sciencedirect.com/science/artic
 
 This means that, while the NCIt is an excellent starting point, as multiple data models have been coupled to the NCIt via the caDSR data_element_concept_object_class, data_element_concept_property,  and permissible_value_meaning links (see figure below), we still have to augment the NCIt with an actual ontology -- extant when possible, but we may also have to add our own items.  The remainder of this discussion is about this process and what needs to happen.
 
-
+![](../images/data-description-metamodel.png)
 
 The above model presents a high-level view of the ISO 11179-3 data element description model.  In the upper left hand corner, Data_Element_Concept identifies a specific property or characteristic or a specific type of object.   Data element concepts might include “Person.age”, “Physical object.weight” or “Human Subject.blood pressure”, with “Person”, “Physical object” and “Human subject” being object classes and “age”, “weight” and “blood pressure” being properties.
 
@@ -125,11 +125,13 @@ We quickly discover, however, that we are using the NCIt strictly as a lexicon. 
 
 The second thing that we note is that the property itself, “Type”, is quite generic and, while it makes sense in common english usage, there is little formal value within the NCIt itself. 
  
-OWL representation of the NCIt “Type” Class
+
+![](./images/protege_1.png)
+Figure: OWL representation of the NCIt “Type” Class
 
 The set of permissible values for the Analyte.analyte_type data includes the following:
 
-
+![](./images/cadsr_2.png)
 …
 Assume, now, that you are approaching this model with a set of specimens and the data associated with them.  The questions that may need addressing include:
 Analyte is defined as a “Molecular Specimen”.  What does this mean and do my specimens fit this definition?
@@ -142,14 +144,19 @@ We will start with some components of the NCI Thesaurus as it exists today and p
 
 #### Question 1: What is a “Molecular Specimen” and what does or does not fit into that bucket?
 
+![](./images/protege_2.png)
+![](./images/protege_3.png)
 
 At first blush, the answer is less than obvious -- we aren’t really sure why the term “Molecular” was coupled with specimen and which of the subclasses (Agglutinated Specimen, Analyte, Biospecimen, homogenate, etc) might fit that definition.   Referring back to the source data dictionary, however:
+
+![](./images/gdc_1.png)
 
 We note that the category of an analyte is “biospecimen”, so we propose the following changes:
 Change the associated Object_Class from “Specimen”/”Molecular” to “Biospecimen” 
 Extend the definition of “Biospecimen” to include its specific differentia
 State what of the remaining specimen types don’t  count as “biospecimens”
 
+![](./images/protege_4.png)
 (Note: This is clearly not a complete or even correct definition, but its intent is to show how ontology in the form of NCIt+ can be used to improve the documentation and eventual computability of a model.)
 
 #### Question 2:  I have separated the preservation method from the actual specimen content itself.  I have DNA, RNA and mitochondrial RNA specimens, all of which are in Paraffin-embedded blocks.  Some of these specimens have been preserved using formaldehyde, some with propylene glycol and we also have some where the method has not been recorded.  In addition, I have specimens that include a mixture of DNA and RNA.  How do I record this information?
@@ -161,17 +168,21 @@ We end up teasing two separate aspects out of the above entries - one being a li
 
 We extend the existing Biological Sample Preservation Procedure branch to include Paraffin Embedding, Fixed Formalin and Propylene Glycol methods, as well as an entry for FFPE which is a procedure that consists of both aspects:
 
-
+![](./images/protege_5.png)
 
 
 
 We then proceed to add two new object properties -- analysis_target, with the domain of Specimen and range of Substance and uses_preservation_method with a Specimen domain and Preservation Procedure range
 
-
+![](./images/protege_6.png)
 
 We can then use above properties to flesh out our definition of Biospecimen
 
+![](./images/protege_7.png)
+
 Adding the fact that biospecimens have at least one analysis target and at least one preservation method (Obviously not 100% correct, but this is an issue that we need to address in the ontology space.)
+
+![](./images/protege_8.png)
 
 We can then step down to specific Biospecimens:
 
@@ -184,7 +195,7 @@ Above, we’ve defined Fixed Specimen as any specimen that uses Paraffin Embeddi
 
 We will begin by noting that there is probably not an objective answer to this question.  The decision of what does and doesn’t count as a “Biospecimen” is more one of fiat than of reality.  We need to strengthen our definition of Biospecimen slightly -- at the moment, we’ve said that every Biospecimen has at least one analysis_target that is an instance of a Protein/Peptide Substance. We haven’t stated, however, that this is the only sort of target.  If say that all analysis targets must be this:
 
-
+![](./images/protege_9.png)
 
 Then the question becomes, have we classified Amniotic Fluid as a Protein/Peptide Substance or not?
 
@@ -192,8 +203,11 @@ Then the question becomes, have we classified Amniotic Fluid as a Protein/Peptid
 
 As with the Amniotic Fluid example above, this decision must be made by the community.  Once decided, however, the result can be recorded in the ontology.  For our purposes, we choose to state “DNA” in this context means any sample that includes an analysis_target of DNA, whether it is preserved or not.  We will add a new class (note: we aren’t paying attention to computational complexity at the moment…), “Non_FFPE_preservation” which we can use to model DNA that doesn’t use FFPE as a preservation method:
 
+![](./images/protege_10.png)
 
 We can then add these entries to the possible biospecimens:
+
+![](./images/protege_11.png)
 
 
 ### Using the NCIt Plus with real data
@@ -201,6 +215,8 @@ We can then add these entries to the possible biospecimens:
 Permissible Values, Value Meanings and Conceptual Domains
 
 If we now zero in on the upper right hand quadrant of the ISO 11179 model:
+
+![](./images/iso11179_3.png)
 
 
 We note that we have three separate components:
