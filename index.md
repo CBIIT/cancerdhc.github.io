@@ -1,6 +1,6 @@
-# Center for Cancer Data Harmonization
+[Home](https://cancerdhc.github.io) | [CCDH Resources](https://cancerdhc.github.io/ccdh-resources) | [Terminology and Ontology Workstream](https://cancerdhc.github.io/terminology/) | [Project Task Dashboard](https://cancerdhc.github.io/dashboard/)
 
-[CCDH Resources](https://cancerdhc.github.io/ccdh-resources) | [Terminology and Ontology Workstream](https://cancerdhc.github.io/terminology/) | [Project Task Dashboard](https://cancerdhc.github.io/dashboard/)
+# Center for Cancer Data Harmonization
 
 The CCDH serves three main roles within the Cancer Research Data Commons (CRDC) ecosystem:
 * Facilitate retrospective and prospective semantic harmonization of data across nodes of the CRDC.
