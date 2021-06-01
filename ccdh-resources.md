@@ -1,4 +1,4 @@
-[Home](https://cancerdhc.github.io) | [Terminology and Ontology Workstream](https://cancerdhc.github.io/terminology/) | [Project Task Dashboard](https://cancerdhc.github.io/dashboard/)
+[Home](https://cancerdhc.github.io) | [CCDH Resources](https://cancerdhc.github.io/ccdh-resources) | [Terminology and Ontology Workstream](https://cancerdhc.github.io/terminology/) | [Project Task Dashboard](https://cancerdhc.github.io/dashboard/)
 
 # CCDH Resources
 
