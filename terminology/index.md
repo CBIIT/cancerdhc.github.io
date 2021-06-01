@@ -1,6 +1,6 @@
-[Home](https://cancerdhc.github.io) | [CCDH Resources](https://cancerdhc.github.io/ccdh-resources) | [Terminology and Ontology Workstream](https://cancerdhc.github.io/terminology/) | [Project Task Dashboard](https://cancerdhc.github.io/dashboard/)
+[Home](https://cancerdhc.github.io) | [CCDH Core Resources](https://cancerdhc.github.io/ccdh-resources) | [Additional Terminological Considerations](https://cancerdhc.github.io/terminology/) | [Project Task Dashboard](https://cancerdhc.github.io/dashboard/)
 
-# Terminology and Ontology Workstream
+# Additional Terminological Considerations
 
 Table of Contents
 
